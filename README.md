@@ -2,12 +2,12 @@
 
 ![](images/haskellLogo.png)
 
-The purpose of this tutorial is to illustrate functional programming concepts in Haskell language by providing reusable and useful pieces of codes, examples, case study and applications.
+The purpose of this tutorial is to illustrate functional programming concepts in the Haskell language by providing reusable and useful pieces of code, examples, case study and applications.
 
 Notes: 
 
 * The codes with '>' symbol were run in the interactive haskell Shell ghci
-and the line bellow without the symbol > are the output.
+and the line below  without the symbol > are the output.
 
 This page can be accessed from: https://github.com/caiorss/Functional-Programming
 
@@ -171,16 +171,16 @@ Functional Programming is all about programming with functions.
 
 **Functional Programming Features**
 
-* Pure Functions / Referencail Transparency / No side effect
+* Pure Functions / Referential Transparency / No side effect
 * Function Composition
 * Lambda Functions/ Anonymous Functions
-* High Order Functions
+* Higher Order Functions
 * Currying/ Partial Function Application
-* Clousure - Returning functions from functions
+* Closure - Returning functions from functions
 
-* Data Imutability
+* Data Immutability
 * Pattern Matching
-* Lists are the fundamental data Structure
+* Lists are the fundamental data structure
 
 Non Essential Features:
 
@@ -194,7 +194,7 @@ Non Essential Features:
 * Closure - Return functions from functions
 * Function composition
 * Composable functions
-* High Order Functions
+* Higher Order Functions
 * MapReduce Algorithms - Split computation in multiple computers cores.
 * Lazy Evaluation ( aka Delayed evaluation)
 * Pattern Matching
@@ -203,13 +203,13 @@ Non Essential Features:
 #### Haskell Features
 
 * Pure Functional programming language
-* Strong Static Typed Language 
-* Type Inference (The haskell compiler deduce the types for you). 
-* Lazy Evaluation ( Dealayed evaluation) by default
-* Data Imutability/ Haskell has no variables
+* Strong Statically Typed Language 
+* Type Inference (The Haskell compiler deduce the types for you). 
+* Lazy Evaluation ( Delayed evaluation) by default
+* Data Immutability/ Haskell has no variables
     * Values can be bound to a name and can only be assigned once.
     * Values can never change.
-* Haskell has not for-loop, while statements.
+* Haskell has no for-loop, while statements.
 * Algebraic Data types
 * Pattern Matching
 * Tail Recursions
@@ -223,9 +223,9 @@ Non Essential Features:
 Pure functions:
 
 * Are functions without side effects, like mathematical functions. 
-* For the same input the functions always returns the same output.
-* Pure functions doens't rely on global variable and doesn't have internal states.
-* Pure functions are deterministic
+* For the same input the functions always return the same output.
+* Pure functions don't rely on global variables and don't have internal states.
+* Pure functions are deterministic.
 * The result of any function call is fully determined by its arguments. 
 
 Why Pure Functions:
@@ -248,8 +248,8 @@ def min(x, y):
 
 **Example of impure function**
 
-* Impure functions doesn't have always the same output for the same
-* Impure functions does IO or has Hidden State, Global Variables
+* Impure functions don't always have the same output for the same arguments
+* Impure functions do IO or have Hidden State, Global Variables
 
 ```python
 exponent = 2
@@ -262,8 +262,8 @@ def powers(L):
 The function min is pure. It always produces the same result given 
 the same inputs and it doesn’t affect any external variable.
 
-The function powers is impure because it not always gives the same output
-for the same input, it depends on the global variable exponent:
+The function powers is impure because it does not always give the same output
+for the same input, it depends on the global variable exponent.
 
 ```python
 
@@ -345,7 +345,7 @@ Example in Haskell:
 
 Example in Python:
 
-* Python uses eager eavaluation by default. In order to get lazy evaluation in python the programmer must use iterators or generators. The example below uses generator.
+* Python uses eager evaluation by default. In order to get lazy evaluation in python the programmer must use iterators or generators. The example below uses generator.
 
 ```python
 
@@ -422,7 +422,7 @@ x**y    pour y tout type de nombre (Float par exemple)
 
 #### Application Operator - $
 
-Tje application operator '$' makes code more readable and cleaner since substitutes parenthesis.
+The application operator '$' makes code more readable and cleaner since it substitutes parenthesis.
 It is also useful in higher-order situations, such as map ($ 0) xs, or zipWith ($) fs xs. 
 
 ```haskell
@@ -543,7 +543,7 @@ k :: [Double]
 * A class is a collection of types that support certain operations, 
 called the methods of the class.
 
-* Each expressions must have a valid type, which is calculated before to evaluating the 
+* Each expression must have a valid type, which is calculated before evaluating the 
 expression by the Haskell compiler, it is called type inference;
 
 * Haskell programs are type safe, since type errors can never occur during run time;
@@ -754,7 +754,7 @@ Adding an element to the beggining of the list
 [20,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10]
 ```
 
-Adding an element to end of the list
+Adding an element to end of the list.
 
 ```haskell
 
@@ -1047,7 +1047,7 @@ Example 1:
 > 
 ```
 
-Example 2: Derivate functions
+Example 2: Derivative Functions
 
 ### Recursion
 
@@ -1135,10 +1135,10 @@ const :: a -> b -> a
 
 ### Higher Order Functions
 
-Higher Order functions are functios that takes functions as 
+Higher Order functions are functions that take functions as 
 arguments.
 
-Why Higher Order Function?
+Why Higher Order Functions?
 
 * Common programming idioms, such as applying a function twice, can naturally be encapsulated as 
 general purpose higher-order functions (Hutton);
@@ -1552,7 +1552,7 @@ f :: Num a => a -> a -> a
 
 #### Iterate
 
-This function is useful for recursive algorithms like, root finding, numerical serie approximation, differential equation solving and finite differences.
+This function is useful for recursive algorithms like root finding, numerical series approximation, differential equation solving and finite differences.
 
 
 ```
@@ -2238,7 +2238,7 @@ class  Functor f  where
 * f a : a is a parameter, f wraps a
 * f b : b is a parameter wrapped by f
 
-A functor must satisfy the following operations (aka funtor laws):
+A functor must satisfy the following operations (aka functor laws):
 
 ```haskell
 
@@ -2250,7 +2250,7 @@ fmap (f . g) = fmap f . fmap g  -- Composition law
 fmap id = id                    -- Identity law
 ```
 
-The following functors defined in Haskell standard library prelude.hs. The function fmap is defined for each of the functor types.
+The following functors defined in the Haskell standard library prelude.hs. The function fmap is defined for each of the functor types.
 
 **List**
 
@@ -2302,7 +2302,7 @@ The most well known functor is the list functor:
 λ> 
 ```
 
-The Maybe type is a functor which the return value is non deterministic that returns a value if the computation is sucessful or return a null value Nothing if the computation fails. It is useful to avoid boilerplate successives null checkings and avoid null checking error.
+The Maybe type is a functor which the return value is non deterministic that returns a value if the computation is sucessful or returns a null value Nothing if the computation fails. It is useful to avoid boilerplate successives null checkings and avoid null checking error.
 
 ```haskell
 λ> 
